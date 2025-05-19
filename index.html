@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A filterable pokemon pokedex catalogue of all 1025 pokemon">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="body" class="light-theme">
+    <header>
+        <h1>The Pokedex</h1>
+        <h3 id="page-desc">A filterable catalogue of all 1025 pokemon with pokedex entries and types</h3>
+        <button id="theme">Switch Theme</button>
+        <p id="history"></p>
+        <button id="clearHistory">Clear History</button>
+    </header>
+        <div id="result" class="pokemon-grid">
+
+        </div>
+        <nav>
+            <div id="side-bar" class="light-theme">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search Pokemon">
+                    <button id="searchButton">Search</button>
+                </div>
+                <p>Filter by:</p>
+                <form action="">
+                    <input type="checkbox" name="fav" id="favor" value="favor">
+                    <label for="favor">Favourites ⭐</label><br>
+                    <label for="types">Types:</label><br>
+                    <input type="checkbox" id="normal" name="normal" value="Normal">
+                    <label for="normal">Normal</label><br>
+                    <input type="checkbox" id="fire" name="fire" value="Fire">
+                    <label for="fire">Fire</label><br>
+                    <input type="checkbox" id="water" name="water" value="Water">
+                    <label for="water">Water</label><br>
+                    <input type="checkbox" id="grass" name="grass" value="Grass">
+                    <label for="grass">Grass</label><br>
+                    <input type="checkbox" id="fairy" name="fairy" value="Fairy">
+                    <label for="fairy">Fairy</label><br>
+                    <input type="checkbox" id="dark" name="dark" value="Dark">
+                    <label for="dark">Dark</label><br>
+                    <input type="checkbox" id="bug" name="bug" value="Bug">
+                    <label for="bug">Bug</label><br>
+                    <input type="checkbox" id="rock" name="rock" value="Rock">
+                    <label for="rock">Rock</label><br>
+                    <input type="checkbox" id="ground" name="ground" value="Ground">
+                    <label for="ground">Ground</label><br>
+                    <input type="checkbox" id="poison" name="poison" value="Poison">
+                    <label for="poison">Poison</label><br>
+                    <input type="checkbox" id="steel" name="steel" value="Steel">
+                    <label for="steel">Steel</label><br>
+                    <input type="checkbox" id="electric" name="electric" value="Electric">
+                    <label for="electric">Electric</label><br>
+                    <input type="checkbox" id="flying" name="flying" value="Flying">
+                    <label for="flying">Flying</label><br>
+                    <input type="checkbox" id="ghost" name="ghost" value="Ghost">
+                    <label for="ghost">Ghost</label><br>
+                    <input type="checkbox" id="dragon" name="dragon" value="Dragon">
+                    <label for="dragon">Dragon</label><br>
+                    <input type="checkbox" id="psychic" name="psychic" value="Psychic">
+                    <label for="psychic">Psychic</label><br>
+                    <input type="checkbox" id="fighting" name="fighting" value="Fighting">
+                    <label for="fighting">Fighting</label><br>
+                    <input type="checkbox" id="ice" name="ice" value="ice">
+                    <label for="ice">Ice</label><br>
+                    <br>
+                    <label for="generation">Generation:</label><br>
+                    <input type="checkbox" id="gen1" name="gen1" value="gen1">
+                    <label for="gen1">Generation 1</label><br>
+                    <input type="checkbox" id="gen2" name="gen2" value="gen2">
+                    <label for="gen2">Generation 2</label><br>
+                    <input type="checkbox" id="gen3" name="gen3" value="gen3">
+                    <label for="gen3">Generation 3</label><br>
+                    <input type="checkbox" id="gen4" name="gen4" value="gen4">
+                    <label for="gen4">Generation 4</label><br>
+                    <input type="checkbox" id="gen5" name="gen5" value="gen5">
+                    <label for="gen5">Generation 5</label><br>
+                    <input type="checkbox" id="gen6" name="gen6" value="gen6">
+                    <label for="gen6">Generation 6</label><br>
+                    <input type="checkbox" id="gen7" name="gen7" value="gen7">
+                    <label for="gen7">Generation 7</label><br>
+                    <input type="checkbox" id="gen8" name="gen8" value="gen8">
+                    <label for="gen8">Generation 8</label><br>
+                    <input type="checkbox" id="gen9" name="gen9" value="gen9">
+                    <label for="gen9">Generation 9</label><br>
+                    <br>
+                    <label for="stage">Evo Stage:</label><br>
+                    <input type="checkbox" id="first" name="first" value="first">
+                    <label for="first">First Stage</label><br>
+                    <input type="checkbox" id="second" name="second" value="second">
+                    <label for="second">Second Stage</label><br>
+                    <input type="checkbox" id="third" name="final" value="final">
+                    <label for="third">Third Stage</label><br>
+
+                </form>
+            </div>
+        </nav>
+        <script src="array.js"></script>
+        <script src="render.js"></script>
+        <script src="greet.js"></script>
+        <script src="search.js"></script>
+        <script src="theme.js"></script>
+        <script src="timer.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    columns: var(--text-color);
+    padding: 20px;
+    border-right: 3px solid var(--text-color);
+    overflow: scroll;
+}
+header{
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+#page-desc{
+    margin-top: 10px;
+}
+.light-theme {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --card-bg: #fff;
+    --card-border: #ddd;
+    --button-bg: #4a90e2;
+    --button-text: #fff;
+    --button-hover: #3a7bc8;
+}
+.dark-theme {
+    --bg-color: #222;
+    --text-color: #f5f5f5;
+    --card-bg: #333;
+    --card-border: #444;
+    --button-bg: #5a5eb9;
+    --button-text: #fff;
+    --button-hover: #484a94;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+button:hover {
+    background-color: var(--button-hover);
+}
+#searchButton{
+    padding: 10px;
+    margin: 10px;
+    margin-left: 0px;
+}
+input{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size:16px;
+}
+#searchInput{
+    width: 110%;
+    padding: 3px;
+}
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-left: 220px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+
+.pokemon-card {
+    background: var(--bg-color);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    border: 3px solid var(--text-color);
+}
+
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    border: 3px solid var(--button-hover);
+}
+
+
+.pokemon-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+
+.pokemon-card h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+.fav-clicked{
+    background-color: red;
+}
+.fav-clicked:hover{
+    background-color: rgb(121, 4, 4);
+}
+#clearH{
+    padding: 10px;
+    margin: 10px;
+    margin-top: 5px;
+}
+.links{
+    margin: 5px; 
+    padding: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-decoration: underline;
+}
+.links:hover{
+    background-color: var(--card-border);
+}
