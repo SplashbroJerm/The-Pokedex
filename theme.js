@@ -24,19 +24,3 @@ document.addEventListener('keydown', function(e){
         themeToggle.click();
     }
 })
-
-
-
-// function switchTheme(){
-//     if (document.body.className.match('light-theme') ){
-//         document.body.classList.remove('light-theme');
-//         document.body.classList.add('dark-theme');
-//         sideBar.classList.remove('light-theme')
-//         sideBar.classList.add('dark-theme');
-//     } else if (document.body.className.match('dark-theme') ) {
-//         document.body.classList.remove('dark-theme');
-//         document.body.classList.add('light-theme');
-//         sideBar.classList.remove('dark-theme');
-//         sideBar.classList.add('light-theme');
-//     }
-// }

@@ -1,4 +1,4 @@
-//cmopleted
+//completed
 
 const history = document.getElementById('history');
 const clearHistory = document.getElementById('clearHistory');
@@ -30,9 +30,7 @@ function renderPokemon(pokemons) {
             }
 
             let localFavs = JSON.parse(localStorage.getItem("savedFavs")) || [];
-            // let isF = localFavs.filter(p => p.name === pokemon.name).length
             if(localFavs.filter(p => p.name === pokemon.name).length){
-                // console.log(localFavs)
                 pokemon.favorite =true;
             }
             const pokemonDiv = document.createElement('div');
@@ -115,8 +113,6 @@ function renderPokemon(pokemons) {
                 this.classList.add('fav-clicked')
             }
         }));
-
-        // console.log(`Successfully rendered ${pokemons.length} pokemon`);
 }
 
 
@@ -134,13 +130,11 @@ function performSearch(){
     }
 
         const filteredPokemon = pokedex.filter(pokemon => {
-            // console.log(pokemon)
         const nameMatch = pokemon.name.toLowerCase().includes(searchTerm);
         const idMatch = isNumericSearch(searchTerm) && matchesId(pokemon.id.toString(), searchTerm);
         const firstTypeMatch = pokemon.type1.toLowerCase().includes(searchTerm);
         const secondTypeMatch = pokemon.type2.toLowerCase().includes(searchTerm);
 
-        // console.log(nameMatch, idMatch, firstTypeMatch, secondTypeMatch)
        
         return nameMatch || idMatch || firstTypeMatch || secondTypeMatch;
     });
@@ -225,7 +219,6 @@ const firstBox = document.getElementById('first');
 const secondBox = document.getElementById('second');
 const thirdBox = document.getElementById('third');
 const favCheckbox = document.getElementById('favor');
-// const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 
 function filterPokemons(){
@@ -238,10 +231,6 @@ function filterPokemons(){
 
     favCheckbox.addEventListener('change', function() {
         if(favCheckbox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const favPokemon = pokedex.filter(pokemon => pokemon.favorite == true);
-            // renderPokemon(favPokemon);
             filters.favorite = true;
         }else{
             filters.favorite = false;
@@ -251,14 +240,9 @@ function filterPokemons(){
 
     normalBox.addEventListener('change', function() {
         if(normalBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const normalPokemon = pokedex.filter(pokemon => pokemon.type1 == "Normal" || pokemon.type2 == "Normal");
-            // renderPokemon(normalPokemon);
             filters.types.push('Normal');
             console.log(filters)
         } else {
-            // const normalRemove = filters.types.find('Normal')
             let normalRemove  = "Normal";
             let normalIndex = filters.types.indexOf(normalRemove)
             if(normalIndex > -1){
@@ -269,10 +253,6 @@ function filterPokemons(){
     });
     fireBox.addEventListener('change', function() {
         if(fireBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const firePokemon = pokedex.filter(pokemon => pokemon.type1 == "Fire" || pokemon.type2 == "Fire");
-            // renderPokemon(firePokemon);
             filters.types.push('Fire');
             console.log(filters)
 
@@ -287,10 +267,6 @@ function filterPokemons(){
     });
     waterBox.addEventListener('change', function() {
         if(waterBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const waterPokemon = pokedex.filter(pokemon => pokemon.type1 == "Water" || pokemon.type2 == "Water");
-            // renderPokemon(waterPokemon)
             filters.types.push('Water');
             console.log(filters)
 
@@ -305,10 +281,6 @@ function filterPokemons(){
     });
     grassBox.addEventListener('change', function() {
         if(grassBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const grassPokemon = pokedex.filter(pokemon => pokemon.type1 == "Grass" || pokemon.type2 == "Grass");
-            // renderPokemon(grassPokemon)
             filters.types.push('Grass');
 
         } else {
@@ -322,10 +294,6 @@ function filterPokemons(){
     });
     fairyBox.addEventListener('change', function() {
         if(fairyBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const fairyPokemon = pokedex.filter(pokemon => pokemon.type1 == "Fairy" || pokemon.type2 == "Fairy");
-            // renderPokemon(fairyPokemon)
             filters.types.push('Fairy');
 
         } else {
@@ -339,10 +307,6 @@ function filterPokemons(){
     });
     darkBox.addEventListener('change', function() {
         if(darkBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const darkPokemon = pokedex.filter(pokemon => pokemon.type1 == "Dark" || pokemon.type2 == "Dark");
-            // renderPokemon(darkPokemon);
             filters.types.push('Dark');
 
         } else {
@@ -356,10 +320,6 @@ function filterPokemons(){
     });
     bugBox.addEventListener('change', function() {
         if(bugBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const bugPokemon = pokedex.filter(pokemon => pokemon.type1 == "Bug" || pokemon.type2 == "Bug");
-            // renderPokemon(bugPokemon);
 
             filters.types.push('Bug');
         } else {
@@ -373,10 +333,6 @@ function filterPokemons(){
     });
     rockBox.addEventListener('change', function() {
         if(rockBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const rockPokemon = pokedex.filter(pokemon => pokemon.type1 == "Rock" || pokemon.type2 == "Rock");
-            // renderPokemon(rockPokemon);
             filters.types.push('Rock');
 
         } else {
@@ -390,10 +346,6 @@ function filterPokemons(){
     });
     groundBox.addEventListener('change', function() {
         if(groundBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const groundPokemon = pokedex.filter(pokemon => pokemon.type1 == "Ground" || pokemon.type2 == "Ground");
-            // renderPokemon(groundPokemon
             filters.types.push('Ground');
 
         } else {
@@ -407,10 +359,6 @@ function filterPokemons(){
     });
     poisonBox.addEventListener('change', function() {
         if(poisonBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const poisonPokemon = pokedex.filter(pokemon => pokemon.type1 == "Poison" || pokemon.type2 == "Poison");
-            // renderPokemon(poisonPokemon
             filters.types.push('Poison');
 
         } else {
@@ -424,10 +372,6 @@ function filterPokemons(){
     });
     steelBox.addEventListener('change', function() {
         if(steelBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const steelPokemon = pokedex.filter(pokemon => pokemon.type1 == "Steel" || pokemon.type2 == "Steel");
-            // renderPokemon(steelPokemon)
             filters.types.push('Steel');
 
         } else {
@@ -441,10 +385,6 @@ function filterPokemons(){
     });
     electricBox.addEventListener('change', function() {
         if(electricBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const electricPokemon = pokedex.filter(pokemon => pokemon.type1 == "Electric" || pokemon.type2 == "Electric");
-            // renderPokemon(electricPokem
             filters.types.push('Electric');
 
         } else {
@@ -458,10 +398,6 @@ function filterPokemons(){
     });
     flyingBox.addEventListener('change', function() {
         if(flyingBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const FlyingPokemon = pokedex.filter(pokemon => pokemon.type1 == "Flying" || pokemon.type2 == "Flying");
-            // renderPokemon(FlyingPokemon
             filters.types.push('Flying');
 
         } else {
@@ -475,10 +411,6 @@ function filterPokemons(){
     });
     ghostBox.addEventListener('change', function() {
         if(ghostBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const ghostPokemon = pokedex.filter(pokemon => pokemon.type1 == "Ghost" || pokemon.type2 == "Ghost");
-            // renderPokemon(ghostPokemon)
             filters.types.push('Ghost');
 
         } else {
@@ -492,10 +424,6 @@ function filterPokemons(){
     });
     dragonBox.addEventListener('change', function() {
         if(dragonBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const dragonPokemon = pokedex.filter(pokemon => pokemon.type1 == "Dragon" || pokemon.type2 == "Dragon");
-            // renderPokemon(dragonPokemon
             filters.types.push('Dragon');
 
         } else {
@@ -509,10 +437,6 @@ function filterPokemons(){
     });
     psychicBox.addEventListener('change', function() {
         if(psychicBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const psychicPokemon = pokedex.filter(pokemon => pokemon.type1 == "Psychic" || pokemon.type2 == "Psychic");
-            // renderPokemon(psychicPokemo
             filters.types.push('Psychic');
 
         } else {
@@ -526,10 +450,6 @@ function filterPokemons(){
     });
     fightingBox.addEventListener('change', function() {
         if(fightingBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const fightingPokemon = pokedex.filter(pokemon => pokemon.type1 == "Fighting" || pokemon.type2 == "Fighting");
-            // renderPokemon(fightingPokem
             filters.types.push('Fighting');
 
         } else {
@@ -543,11 +463,6 @@ function filterPokemons(){
     });
     iceBox.addEventListener('change', function() {
         if(iceBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const icePokemon = pokedex.filter(pokemon => pokemon.type1 == "Ice" || pokemon.type2 == "Ice");
-            // renderPokemon(icePokemon);
-
             filters.types.push('Ice');
         } else {
             let iceRemove  = "Ice";
@@ -560,122 +475,70 @@ function filterPokemons(){
     });
     gen1Box.addEventListener('change', function() {
         if(gen1Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen1Pokemon = pokedex.filter(pokemon => pokemon.generation == 1);
-            // renderPokemon(gen1Pokemon);
             filters.generation = '1';
 
         }
     });
     gen2Box.addEventListener('change', function() {
         if(gen2Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen2Pokemon = pokedex.filter(pokemon => pokemon.generation == 2);
-            // renderPokemon(gen2Pokemon);
-            filters.generation = '2'
+            filters.generation = '2';
 
         }
     });
     gen3Box.addEventListener('change', function() {
         if(gen3Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen3Pokemon = pokedex.filter(pokemon => pokemon.generation == 3);
-            // renderPokemon(gen3Pokemon);
-            filters.generation = '3'
+            filters.generation = '3';
 
         }
     });
     gen4Box.addEventListener('change', function() {
         if(gen4Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen4Pokemon = pokedex.filter(pokemon => pokemon.generation == 4);
-            // renderPokemon(gen4Pokemon);
-            filters.generation = '4'
+            filters.generation = '4';
 
         }
     });
     gen5Box.addEventListener('change', function() {
-        if(gen5Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen5Pokemon = pokedex.filter(pokemon => pokemon.generation == 5);
-            // renderPokemon(gen5Pokemon);
-            filters.generation = '5'
+        if(gen5Box.checked) {;
+            filters.generation = '5';
 
         }
     });
     gen6Box.addEventListener('change', function() {
         if(gen6Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen6Pokemon = pokedex.filter(pokemon => pokemon.generation == 6);
-            // renderPokemon(gen6Pokemon);
-            filters.generation = '6'
+            filters.generation = '6';
 
         }
     });
     gen7Box.addEventListener('change', function() {
         if(gen7Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen7Pokemon = pokedex.filter(pokemon => pokemon.generation == 7);
-            // renderPokemon(gen7Pokemon);
-            filters.generation = '7'
+            filters.generation = '7';
 
         }
     });
     gen8Box.addEventListener('change', function() {
         if(gen8Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen8Pokemon = pokedex.filter(pokemon => pokemon.generation == 8);
-            // renderPokemon(gen8Pokemon);
-            filters.generation = '8'
+            filters.generation = '8';
 
         }
     });
     gen9Box.addEventListener('change', function() {
         if(gen9Box.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const gen9Pokemon = pokedex.filter(pokemon => pokemon.generation == 9);
-            // renderPokemon(gen9Pokemon);
-            filters.generation = '9'
-
+            filters.generation = '9';
         }
     });
     firstBox.addEventListener('change', function() {
         if(firstBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const firstPokemon = pokedex.filter(pokemon => pokemon.stage == "First");
-            // renderPokemon(firstPokemon)
-            filters.stage = 'First'
-
+            filters.stage = 'First';
         }
     });
     secondBox.addEventListener('change', function() {
         if(secondBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const secondPokemon = pokedex.filter(pokemon => pokemon.stage == "Second");
-            // renderPokemon(secondPokemon
-            filters.stage = 'Second'
-
+            filters.stage = 'Second';
         }
     });
     thirdBox.addEventListener('change', function() {
         if(thirdBox.checked) {
-            // alert("checked fav")
-            // const favPokemon = pokedex.filter(pokemon => console.log(pokemon));
-            // const thirdPokemon = pokedex.filter(pokemon => pokemon.stage == "Third");
-            // renderPokemon(thirdPokemon)
             filters.stage = 'Third';
-
         }
     });
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -711,15 +574,10 @@ function filterPokemons(){
         })
         renderPokemon(filteredPokemon)
         console.log(stageFilter)
-        // console.log(filteredPokemon)
 
         checkboxes.forEach(checkbox => {
             if (checkbox.checked) {
                 anyChecked = true;
-                // if(filters.favorite == true){
-                //     filterPokemons = filterPokemons.filter(pokemon => pokemon.favorite == true));
-                // }
-                // if (typeFilter == )
             }
         });
         if (!anyChecked) {
